@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ExamTwoCodeQuestions.Data;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -21,6 +22,34 @@ namespace ExamTwoQuestions.PointOfSale
         public CustomizeCobblerControl()
         {
             InitializeComponent();
+            PeachButton.Click += OnPeachButtonClicked;
+            CherryButton.Click += OnCherryButtonClicked;
+            BlueberryButton.Click += OnBlueberryButtonClicked;
+        }
+
+        //Event handlers to set fruit filling flavor
+        public void OnPeachButtonClicked(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is Cobbler c)
+            {
+                c.Fruit = FruitFilling.Peach;
+            }
+        }
+
+        public void OnCherryButtonClicked(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is Cobbler c)
+            {
+                c.Fruit = FruitFilling.Cherry;
+            }
+        }
+
+        public void OnBlueberryButtonClicked(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is Cobbler c)
+            {
+                c.Fruit = FruitFilling.Blueberry;
+            }
         }
     }
 }

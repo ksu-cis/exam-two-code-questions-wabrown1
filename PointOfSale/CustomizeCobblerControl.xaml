@@ -6,7 +6,21 @@
              xmlns:local="clr-namespace:ExamTwoQuestions.PointOfSale"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <TextBlock>Customize Cobbler</TextBlock>
+    <Grid>        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock FontSize="45" Grid.ColumnSpan="2" Grid.Row="0">Customize Cobbler</TextBlock>
+        <StackPanel Grid.Column="0" Grid.Row="1">            
+            <RadioButton x:Name="PeachButton" IsChecked="True" GroupName="Filling" FontSize="40">Peach</RadioButton>
+            <RadioButton x:Name="CherryButton" GroupName="Filling" FontSize="40">Cherry</RadioButton>
+            <RadioButton x:Name="BlueberryButton" GroupName="Filling" FontSize="40">Blueberry</RadioButton>
+        </StackPanel>
+        <CheckBox Grid.Column="1" Grid.Row="1" IsChecked="{Binding Path=WithIceCream}" x:Name="WithIceCreamCheckBox" FontSize="40">With Ice Cream</CheckBox>
     </Grid>
 </UserControl>
